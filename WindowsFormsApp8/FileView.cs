@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp8
 {
-    public partial class Form1 : Form
+    public partial class FileView : UserControl
     {
-        public Form1()
+        public FileView()
         {
             InitializeComponent();
         }
 
-        private void ListView2_SelectedIndexChanged(object sender, EventArgs e)
+        private void List_view_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
