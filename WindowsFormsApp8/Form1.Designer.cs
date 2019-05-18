@@ -36,6 +36,8 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.fileView1 = new WindowsFormsApp8.FileView();
+            this.fileView2 = new WindowsFormsApp8.FileView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -44,6 +46,8 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -112,6 +116,14 @@
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.fileView1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.fileView2);
             this.splitContainer3.Size = new System.Drawing.Size(569, 255);
             this.splitContainer3.SplitterDistance = 196;
             this.splitContainer3.TabIndex = 0;
@@ -140,6 +152,24 @@
             this.splitContainer5.SplitterDistance = 127;
             this.splitContainer5.TabIndex = 0;
             // 
+            // fileView1
+            // 
+            this.fileView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileView1.Location = new System.Drawing.Point(0, 0);
+            this.fileView1.Name = "fileView1";
+            this.fileView1.Size = new System.Drawing.Size(196, 255);
+            this.fileView1.TabIndex = 0;
+            this.fileView1.Load += new System.EventHandler(this.FileView1_Load);
+            // 
+            // fileView2
+            // 
+            this.fileView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileView2.Location = new System.Drawing.Point(0, 0);
+            this.fileView2.Name = "fileView2";
+            this.fileView2.Size = new System.Drawing.Size(369, 255);
+            this.fileView2.TabIndex = 0;
+            this.fileView2.Load += new System.EventHandler(this.FileView2_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -159,6 +189,8 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -181,6 +213,8 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
+        private FileView fileView1;
+        private FileView fileView2;
     }
 }
 

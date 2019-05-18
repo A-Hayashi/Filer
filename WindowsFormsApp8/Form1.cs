@@ -21,5 +21,15 @@ namespace WindowsFormsApp8
         {
 
         }
+
+        private void FileView2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FileView1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

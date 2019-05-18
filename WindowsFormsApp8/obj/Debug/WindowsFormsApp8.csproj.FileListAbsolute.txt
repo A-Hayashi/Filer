@@ -8,4 +8,4 @@ C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\Window
 C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.exe
 C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.pdb
 C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.Form1.resources
-C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\SCFiler2.FileView.resources
+C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.FileView.resources

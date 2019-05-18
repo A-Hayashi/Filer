@@ -31,6 +31,10 @@
             this.folder_info_panel = new System.Windows.Forms.Panel();
             this.drive_info_panel = new System.Windows.Forms.Panel();
             this.list_view = new System.Windows.Forms.ListView();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
             this.SuspendLayout();
             // 
             // folder_info_panel
@@ -57,7 +61,19 @@
             this.list_view.Size = new System.Drawing.Size(434, 263);
             this.list_view.TabIndex = 2;
             this.list_view.UseCompatibleStateImageBehavior = false;
+            this.list_view.View = System.Windows.Forms.View.Details;
             this.list_view.SelectedIndexChanged += new System.EventHandler(this.List_view_SelectedIndexChanged);
+            this.list_view.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_view_KeyDown);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // fileSystemWatcher2
+            // 
+            this.fileSystemWatcher2.EnableRaisingEvents = true;
+            this.fileSystemWatcher2.SynchronizingObject = this;
             // 
             // FileView
             // 
@@ -68,6 +84,8 @@
             this.Controls.Add(this.folder_info_panel);
             this.Name = "FileView";
             this.Size = new System.Drawing.Size(434, 375);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -77,5 +95,7 @@
         private System.Windows.Forms.Panel folder_info_panel;
         private System.Windows.Forms.Panel drive_info_panel;
         private System.Windows.Forms.ListView list_view;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.IO.FileSystemWatcher fileSystemWatcher2;
     }
 }
