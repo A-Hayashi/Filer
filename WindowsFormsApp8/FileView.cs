@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
+using WindowsFormsApp8.FileSystem;
 
 namespace WindowsFormsApp8
 {
     public partial class FileView : UserControl
     {
         private string current_path = @"c:\";
-      
+
         public FileView()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace WindowsFormsApp8
         private void setPath(string full__name)
         {
             current_path = full__name;
-            drawView();    
+            drawView();
         }
 
 
@@ -33,23 +35,21 @@ namespace WindowsFormsApp8
             list_view.Clear();
             list_view.Columns.Add("名前", 300);
 
-            string[] folders = System.IO.Directory.GetDirectories(current_path);
-            foreach(string folder in folders)
+            string[] folders = Directory.GetDirectories(current_path);
+            foreach (string folder in folders)
             {
-                string[] strs = folder.Split('\\');
-                string folder_name = strs[strs.Length - 1];
-
-                ListViewItem item = new ListViewItem(folder_name);
-                item.Tag = folder;
+                FilerItem filer_item = new Folder(folder);
+                ListViewItem item = new ListViewItem(filer_item.Info.Name);
+                item.Tag = filer_item;
                 list_view.Items.Add(item);
             }
 
             string[] files = System.IO.Directory.GetFiles(current_path);
-            foreach(string file in files)
+            foreach (string file in files)
             {
-                string file_name = System.IO.Path.GetFileName(file);
-                ListViewItem item = new ListViewItem(file_name);
-                item.Tag = file;
+                FilerItem filer_item = new FileSystem.File(file);
+                ListViewItem item = new ListViewItem(filer_item.Info.Name);
+                item.Tag = filer_item;
                 list_view.Items.Add(item);
             }
 
@@ -62,22 +62,24 @@ namespace WindowsFormsApp8
 
         private void List_view_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                ListViewItem item = list_view.FocusedItem;
-                string item_name = (string)item.Tag;
+                FilerItem item = (FilerItem)list_view.FocusedItem.Tag;
 
-                if (System.IO.Directory.Exists(item_name))
+
+                if (item.Type == FilerItem.ItemType.Folder)
                 {
-                    setPath(item_name);
-                }else if (System.IO.File.Exists(item_name))
-                {
-                    Process.Start(item_name);
+                    setPath(item.Info.FullName);
                 }
-            }else if(e.KeyCode == Keys.Back)
+                else
+                {
+                    Process.Start(item.Info.FullName);
+                }
+            }
+            else if (e.KeyCode == Keys.Back)
             {
-                System.IO.DirectoryInfo info = System.IO.Directory.GetParent(current_path);
-                setPath(info.FullName);
+                DirectoryInfo parent = Directory.GetParent(current_path);
+                setPath(parent.FullName);
             }
         }
     }
