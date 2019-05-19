@@ -24,6 +24,24 @@ namespace WindowsFormsApp8
             setPath(current_path);
         }
 
+        public List<FilerItem> SelectedFilerItems
+        {
+            get
+            {
+                List<FilerItem> list = new List<FilerItem>();
+                foreach (ListViewItem item in list_view.SelectedItems)
+                {
+                    list.Add((FilerItem)item.Tag);
+                }
+                return list;
+            }
+        }
+
+        public string CurrentPath
+        {
+            get { return current_path; }
+        }
+
         private void setPath(string full__name)
         {
             current_path = full__name;
@@ -31,7 +49,7 @@ namespace WindowsFormsApp8
         }
 
 
-        private void drawView()
+        public void drawView()
         {
             list_view.Clear();
             list_view.Columns.Add("名前", 300);
@@ -63,29 +81,15 @@ namespace WindowsFormsApp8
 
         private void List_view_KeyDown(object sender, KeyEventArgs e)
         {
-            if (KeyCommandManager.Instance.executeAction(e.Control, e.Alt, e.Shift, e.KeyCode))
-            {
+            KeyCommandManager.Instance.executeAction(e.Control, e.Alt, e.Shift, e.KeyCode);
 
-            }
-            else if (e.KeyCode == Keys.Enter)
-            {
-                FilerItem item = (FilerItem)list_view.FocusedItem.Tag;
+        }
 
-
-                if (item.Type == FilerItem.ItemType.Folder)
-                {
-                    setPath(item.Info.FullName);
-                }
-                else
-                {
-                    Process.Start(item.Info.FullName);
-                }
-            }
-            else if (e.KeyCode == Keys.Back)
-            {
-                DirectoryInfo parent = Directory.GetParent(current_path);
-                setPath(parent.FullName);
-            }
+        private void List_view_Enter(object sender, EventArgs e)
+        {
+            Form1 main_form = Form1.Instance;
+            main_form.FocusedViewType = Form1.EFocusedViewType.FileView;
+            main_form.setLastFocusedFileView(this);
         }
     }
 }
