@@ -62,6 +62,7 @@
             this.list_view.TabIndex = 2;
             this.list_view.UseCompatibleStateImageBehavior = false;
             this.list_view.View = System.Windows.Forms.View.Details;
+            this.list_view.SelectedIndexChanged += new System.EventHandler(this.List_view_SelectedIndexChanged_1);
             this.list_view.Enter += new System.EventHandler(this.List_view_Enter);
             this.list_view.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_view_KeyDown);
             // 

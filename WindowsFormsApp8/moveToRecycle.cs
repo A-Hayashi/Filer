@@ -8,7 +8,7 @@ using WindowsFormsApp8.FileSystem;
 namespace WindowsFormsApp8.Action
 {
 
-    public class DeleteSelectedItem : Action
+    public class moveToRecycle : Action
     {
         public override void execute()
         {
@@ -23,22 +23,13 @@ namespace WindowsFormsApp8.Action
                 {
                     if(item.Type == FilerItem.ItemType.File)
                     {
-                        Console.WriteLine("a");
-                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.DeletePermanently);
+                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
                     }
                     else
                     {
-                        Console.WriteLine("b");
-                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.AllDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.DeletePermanently);
+                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.AllDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
                     }
-
                 }
-                active_view.drawView();
-
-            }
-            else
-            {
-
             }
         }
     }

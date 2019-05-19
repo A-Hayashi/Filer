@@ -42,7 +42,7 @@ namespace WindowsFormsApp8
             get { return current_path; }
         }
 
-        private void setPath(string full__name)
+        public void setPath(string full__name)
         {
             current_path = full__name;
             drawView();
@@ -90,6 +90,11 @@ namespace WindowsFormsApp8
             Form1 main_form = Form1.Instance;
             main_form.FocusedViewType = Form1.EFocusedViewType.FileView;
             main_form.setLastFocusedFileView(this);
+        }
+
+        private void List_view_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

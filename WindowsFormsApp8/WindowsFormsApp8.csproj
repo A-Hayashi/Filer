@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="moveToRecycle.cs" />
+    <Compile Include="moveToParentFolder.cs" />
+    <Compile Include="moveToAnotherFileView.cs" />
+    <Compile Include="CopyToAnotherFileView.cs" />
+    <Compile Include="ExecuteFocusedItem.cs" />
     <Compile Include="DeleteSelectedItem.cs" />
     <Compile Include="ExitApplication.cs" />
     <Compile Include="Action.cs" />

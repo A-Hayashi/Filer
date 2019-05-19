@@ -8,37 +8,29 @@ using WindowsFormsApp8.FileSystem;
 namespace WindowsFormsApp8.Action
 {
 
-    public class DeleteSelectedItem : Action
+    public class moveToAnotherFileView : Action
     {
         public override void execute()
         {
             Form1 main_form = Form1.Instance;
-
             if(main_form.FocusedViewType == Form1.EFocusedViewType.FileView)
             {
                 FileView active_view = main_form.getLastFocusedFileView();
+                FileView inactive_view = main_form.getAnotherFileView(active_view);
 
                 List<FilerItem> list = active_view.SelectedFilerItems;
+                string to_folder = inactive_view.CurrentPath;
                 foreach(FilerItem item in list)
                 {
                     if(item.Type == FilerItem.ItemType.File)
                     {
-                        Console.WriteLine("a");
-                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.DeletePermanently);
+                        Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(item.Info.FullName, to_folder + "\\" + item.Info.Name, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs);
                     }
                     else
                     {
-                        Console.WriteLine("b");
-                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.AllDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.DeletePermanently);
+                        Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(item.Info.FullName, to_folder, Microsoft.VisualBasic.FileIO.UIOption.AllDialogs);
                     }
-
                 }
-                active_view.drawView();
-
-            }
-            else
-            {
-
             }
         }
     }

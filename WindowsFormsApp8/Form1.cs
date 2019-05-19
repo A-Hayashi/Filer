@@ -60,7 +60,12 @@ namespace WindowsFormsApp8
 
             KeyCommandManager keycommand_manager = KeyCommandManager.Instance;
             keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.Escape), new ExitApplication());
-            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.D), new DeleteSelectedItem());
+            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.Enter), new ExecuteFocusedItem());
+            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.Delete), new moveToRecycle());
+            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, true, Keys.Delete), new DeleteSelectedItem());
+            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.Back), new moveToParentFolder());
+            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.C), new CopyToAnotherFileView());
+            keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.M), new moveToAnotherFileView());
         }
 
         static public Form1 Instance
