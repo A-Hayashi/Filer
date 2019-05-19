@@ -12,11 +12,10 @@ C:\Users\Akinori\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\Window
 C:\work\Filer\Filer\WindowsFormsApp8\bin\Debug\WindowsFormsApp8.exe.config
 C:\work\Filer\Filer\WindowsFormsApp8\bin\Debug\WindowsFormsApp8.exe
 C:\work\Filer\Filer\WindowsFormsApp8\bin\Debug\WindowsFormsApp8.pdb
-C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.csprojAssemblyReference.cache
+C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.FileView.resources
 C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.Form1.resources
 C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.Properties.Resources.resources
 C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.csproj.GenerateResource.cache
 C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.csproj.CoreCompileInputs.cache
 C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.exe
 C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.pdb
-C:\work\Filer\Filer\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.FileView.resources

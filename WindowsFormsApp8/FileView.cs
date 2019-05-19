@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using WindowsFormsApp8.FileSystem;
+using WindowsFormsApp8.Action;
 
 namespace WindowsFormsApp8
 {
@@ -62,7 +63,11 @@ namespace WindowsFormsApp8
 
         private void List_view_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (KeyCommandManager.Instance.executeAction(e.Control, e.Alt, e.Shift, e.KeyCode))
+            {
+
+            }
+            else if (e.KeyCode == Keys.Enter)
             {
                 FilerItem item = (FilerItem)list_view.FocusedItem.Tag;
 
