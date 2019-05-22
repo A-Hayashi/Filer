@@ -71,10 +71,11 @@ namespace WindowsFormsApp8.Action
             valid_keys.Add(Keys.Enter, "Enter");
             valid_keys.Add(Keys.Escape, "Escape");
             valid_keys.Add(Keys.Space, "Space");
+			valid_keys.Add(Keys.Back, "Back");
             valid_keys.Add(Keys.Delete, "Del");
             valid_keys.Add(Keys.Oem5, "\\");
-            valid_keys.Add(Keys.Left, "Left");
-            valid_keys.Add(Keys.Right, "Right");
+		    valid_keys.Add(Keys.Left,"Left");
+		    valid_keys.Add(Keys.Right,"Right");
             valid_keys.Add(Keys.F1, "F1");
             valid_keys.Add(Keys.F2, "F2");
             valid_keys.Add(Keys.F3, "F3");

@@ -30,6 +30,9 @@ namespace WindowsFormsApp8.Action
                         Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(item.Info.FullName, Microsoft.VisualBasic.FileIO.UIOption.AllDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
                     }
                 }
+				active_view.drawView();
+			} else {
+
             }
         }
     }

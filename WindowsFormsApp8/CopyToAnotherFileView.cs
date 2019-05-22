@@ -32,6 +32,9 @@ namespace WindowsFormsApp8.Action
 
                     }
                 }
+				inactive_view.drawView();
+			} else {
+				
             }
         }
     }

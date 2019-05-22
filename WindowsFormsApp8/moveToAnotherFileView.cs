@@ -31,6 +31,10 @@ namespace WindowsFormsApp8.Action
                         Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(item.Info.FullName, to_folder, Microsoft.VisualBasic.FileIO.UIOption.AllDialogs);
                     }
                 }
+				active_view.drawView();
+				inactive_view.drawView();
+            }else{
+            	
             }
         }
     }
