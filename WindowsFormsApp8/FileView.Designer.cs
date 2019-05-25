@@ -33,12 +33,15 @@
             this.list_view = new System.Windows.Forms.ListView();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
+            this.current_path_label = new System.Windows.Forms.Label();
+            this.folder_info_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
             this.SuspendLayout();
             // 
             // folder_info_panel
             // 
+            this.folder_info_panel.Controls.Add(this.current_path_label);
             this.folder_info_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.folder_info_panel.Location = new System.Drawing.Point(0, 0);
             this.folder_info_panel.Name = "folder_info_panel";
@@ -76,6 +79,16 @@
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
+            // current_path_label
+            // 
+            this.current_path_label.AutoSize = true;
+            this.current_path_label.Location = new System.Drawing.Point(22, 24);
+            this.current_path_label.Name = "current_path_label";
+            this.current_path_label.Size = new System.Drawing.Size(35, 12);
+            this.current_path_label.TabIndex = 0;
+            this.current_path_label.Text = "label1";
+            this.current_path_label.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // FileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -85,6 +98,8 @@
             this.Controls.Add(this.folder_info_panel);
             this.Name = "FileView";
             this.Size = new System.Drawing.Size(434, 375);
+            this.folder_info_panel.ResumeLayout(false);
+            this.folder_info_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).EndInit();
             this.ResumeLayout(false);
@@ -98,5 +113,6 @@
         private System.Windows.Forms.ListView list_view;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.IO.FileSystemWatcher fileSystemWatcher2;
+        private System.Windows.Forms.Label current_path_label;
     }
 }

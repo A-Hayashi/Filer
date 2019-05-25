@@ -46,6 +46,7 @@ namespace WindowsFormsApp8
         {
             current_path = full__name;
             drawView();
+            current_path_label.Text = current_path;
         }
 
 
@@ -93,6 +94,11 @@ namespace WindowsFormsApp8
         }
 
         private void List_view_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }

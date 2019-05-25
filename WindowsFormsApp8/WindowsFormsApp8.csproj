@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SettingFile.cs" />
     <Compile Include="moveToRecycle.cs" />
     <Compile Include="moveToParentFolder.cs" />
     <Compile Include="moveToAnotherFileView.cs" />

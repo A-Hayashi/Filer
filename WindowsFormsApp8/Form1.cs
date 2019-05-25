@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp8.Action;
+using WindowsFormsApp8.Util;
 
 namespace WindowsFormsApp8
 {
@@ -66,6 +67,8 @@ namespace WindowsFormsApp8
             keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.Back), new moveToParentFolder());
             keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.C), new CopyToAnotherFileView());
             keycommand_manager.registAction(keycommand_manager.getCommandString(false, false, false, Keys.M), new moveToAnotherFileView());
+
+            drawDriveToolbar();
         }
 
         static public Form1 Instance
@@ -91,7 +94,21 @@ namespace WindowsFormsApp8
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SetteingFile file = SetteingFile.Instance;
 
+            String h_str = file.load("Location", "Height");
+            String w_str = file.load("Location", "Width");
+
+            try
+            {
+                this.Height = int.Parse(h_str);
+                this.Width = int.Parse(w_str);
+            }
+            catch
+            {
+                this.Height = 600;
+                this.Width = 800;
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -102,6 +119,38 @@ namespace WindowsFormsApp8
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SetteingFile file = SetteingFile.Instance;
+
+            if(WindowState == FormWindowState.Normal)
+            {
+                file.save("Location", "Height", this.Height.ToString());
+                file.save("Location", "Width", this.Width.ToString());
+            }
+        }
+
+        private void drawDriveToolbar()
+        {
+            drive_toolbar.Items.Clear();
+
+            System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
+            foreach (System.IO.DriveInfo drive in drives)
+            {
+                ToolStripButton button = new ToolStripButton(drive.Name, null, changeDrive);
+                drive_toolbar.Items.Add(button);
+            }
+        }
+
+        public void changeDrive(object sender, EventArgs e)
+        {
+            ToolStripButton button = (ToolStripButton)sender;
+            FileView view = getLastFocusedFileView();
+
+            view.setPath(button.Text);
+            view.drawView();
         }
     }
 }

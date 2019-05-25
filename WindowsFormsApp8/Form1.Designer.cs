@@ -38,6 +38,7 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.left_file_listview = new WindowsFormsApp8.FileView();
             this.right_file_listview = new WindowsFormsApp8.FileView();
+            this.drive_toolbar = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -174,11 +175,20 @@
             this.right_file_listview.Size = new System.Drawing.Size(369, 254);
             this.right_file_listview.TabIndex = 0;
             // 
+            // drive_toolbar
+            // 
+            this.drive_toolbar.Location = new System.Drawing.Point(0, 49);
+            this.drive_toolbar.Name = "drive_toolbar";
+            this.drive_toolbar.Size = new System.Drawing.Size(800, 25);
+            this.drive_toolbar.TabIndex = 4;
+            this.drive_toolbar.Text = "toolStrip2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.drive_toolbar);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -186,6 +196,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -220,6 +232,7 @@
         private System.Windows.Forms.SplitContainer splitContainer5;
         private FileView left_file_listview;
         private FileView right_file_listview;
+        private System.Windows.Forms.ToolStrip drive_toolbar;
     }
 }
 
